@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58B10017219D397700C8276E /* CBService+LightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10010219D397700C8276E /* CBService+LightBlue.swift */; };
+		58B10018219D397700C8276E /* BluetoothDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10011219D397700C8276E /* BluetoothDelegate.swift */; };
+		58B10019219D397700C8276E /* CBCharacteristic+LightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10012219D397700C8276E /* CBCharacteristic+LightBlue.swift */; };
+		58B1001A219D397700C8276E /* CBAdvertisementData+LightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10013219D397700C8276E /* CBAdvertisementData+LightBlue.swift */; };
+		58B1001B219D397700C8276E /* CBUUID+LightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10014219D397700C8276E /* CBUUID+LightBlue.swift */; };
+		58B1001C219D397700C8276E /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10015219D397700C8276E /* BluetoothManager.swift */; };
+		58B1001D219D397700C8276E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B10016219D397700C8276E /* Constants.swift */; };
 		58B1FFEF219D25F300C8276E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1FFEE219D25F300C8276E /* AppDelegate.swift */; };
 		58B1FFF1219D25F300C8276E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1FFF0219D25F300C8276E /* ViewController.swift */; };
 		58B1FFF4219D25F300C8276E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B1FFF2219D25F300C8276E /* Main.storyboard */; };
@@ -15,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58B10010219D397700C8276E /* CBService+LightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CBService+LightBlue.swift"; sourceTree = "<group>"; };
+		58B10011219D397700C8276E /* BluetoothDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothDelegate.swift; sourceTree = "<group>"; };
+		58B10012219D397700C8276E /* CBCharacteristic+LightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CBCharacteristic+LightBlue.swift"; sourceTree = "<group>"; };
+		58B10013219D397700C8276E /* CBAdvertisementData+LightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CBAdvertisementData+LightBlue.swift"; sourceTree = "<group>"; };
+		58B10014219D397700C8276E /* CBUUID+LightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CBUUID+LightBlue.swift"; sourceTree = "<group>"; };
+		58B10015219D397700C8276E /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		58B10016219D397700C8276E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		58B1FFEB219D25F300C8276E /* BluetoothManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B1FFEE219D25F300C8276E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B1FFF0219D25F300C8276E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +49,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58B1000F219D396900C8276E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				58B10011219D397700C8276E /* BluetoothDelegate.swift */,
+				58B10015219D397700C8276E /* BluetoothManager.swift */,
+				58B10013219D397700C8276E /* CBAdvertisementData+LightBlue.swift */,
+				58B10012219D397700C8276E /* CBCharacteristic+LightBlue.swift */,
+				58B10010219D397700C8276E /* CBService+LightBlue.swift */,
+				58B10014219D397700C8276E /* CBUUID+LightBlue.swift */,
+				58B10016219D397700C8276E /* Constants.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		58B1FFE2219D25F300C8276E = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +82,7 @@
 		58B1FFED219D25F300C8276E /* BluetoothManager */ = {
 			isa = PBXGroup;
 			children = (
+				58B1000F219D396900C8276E /* Source */,
 				58B1FFEE219D25F300C8276E /* AppDelegate.swift */,
 				58B1FFF0219D25F300C8276E /* ViewController.swift */,
 				58B1FFF2219D25F300C8276E /* Main.storyboard */,
@@ -135,8 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B1001B219D397700C8276E /* CBUUID+LightBlue.swift in Sources */,
+				58B10017219D397700C8276E /* CBService+LightBlue.swift in Sources */,
+				58B1001C219D397700C8276E /* BluetoothManager.swift in Sources */,
 				58B1FFF1219D25F300C8276E /* ViewController.swift in Sources */,
 				58B1FFEF219D25F300C8276E /* AppDelegate.swift in Sources */,
+				58B1001A219D397700C8276E /* CBAdvertisementData+LightBlue.swift in Sources */,
+				58B10018219D397700C8276E /* BluetoothDelegate.swift in Sources */,
+				58B10019219D397700C8276E /* CBCharacteristic+LightBlue.swift in Sources */,
+				58B1001D219D397700C8276E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
