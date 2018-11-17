@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BluetoothManager'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A BluetoothManager for Swift'
   s.description      = <<-DESC
 一个基于CoreBlueTooth的swift的蓝牙管理库
