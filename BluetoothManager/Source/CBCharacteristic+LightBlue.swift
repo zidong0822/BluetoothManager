@@ -23,7 +23,7 @@ extension CBCharacteristic {
     /**
      Obtain the properties string array according to the `self.properties`.
      */
-    func getProperties() -> [String] {
+    public func getProperties() -> [String] {
         let properties = self.properties.rawValue
         let broadcast = CBCharacteristicProperties.broadcast.rawValue
         let read = CBCharacteristicProperties.read.rawValue

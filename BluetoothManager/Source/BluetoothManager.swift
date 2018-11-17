@@ -11,8 +11,8 @@ import CoreBluetooth
 public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var _manager : CBCentralManager?
-    var delegate : BluetoothDelegate?
-    private(set) var connected = false
+    public var delegate : BluetoothDelegate?
+    public var connected = false
     var state: CBCentralManagerState? {
         guard _manager != nil else {
             return nil
@@ -24,7 +24,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
     private let notifCenter = NotificationCenter.default
     private var isConnecting = false
     var logs = [String]()
-    private(set) var connectedPeripheral : CBPeripheral?
+    public var connectedPeripheral : CBPeripheral?
     private(set) var connectedServices : [CBService]?
     
     /// Save the single instance
@@ -55,21 +55,21 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      
      - returns: Bluetooth single instance
      */
-    static func getInstance() -> BluetoothManager {
+    public static func getInstance() -> BluetoothManager {
         return instance
     }
     
     /**
      The method provides for starting scan near by peripheral
      */
-    func startScanPeripheral() {
+    public func startScanPeripheral() {
         _manager?.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey:true])
     }
     
     /**
      The method provides for stopping scan near by peripheral
      */
-    func stopScanPeripheral() {
+    public func stopScanPeripheral() {
         _manager?.stopScan()
     }
     
@@ -78,7 +78,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      
      - parameter peripher: The peripheral you want to connect
      */
-    func connectPeripheral(_ peripheral: CBPeripheral) {
+    public func connectPeripheral(_ peripheral: CBPeripheral) {
         if !isConnecting {
             isConnecting = true
             _manager?.connect(peripheral, options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey : true])
@@ -89,7 +89,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
     /**
      The method provides for disconnecting with the peripheral which has connected
      */
-    func disconnectPeripheral() {
+    public func disconnectPeripheral() {
         if connectedPeripheral != nil {
             _manager?.cancelPeripheralConnection(connectedPeripheral!)
             startScanPeripheral()
@@ -102,7 +102,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      
      - parameter characteristic: The character which user want to obtain descriptor
      */
-    func discoverDescriptor(_ characteristic: CBCharacteristic) {
+    public func discoverDescriptor(_ characteristic: CBCharacteristic) {
         if connectedPeripheral != nil  {
             connectedPeripheral?.discoverDescriptors(for: characteristic)
         }
@@ -134,7 +134,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
     /**
      This method provides for discovering the characteristics.
      */
-    func discoverCharacteristics() {
+    public func discoverCharacteristics() {
         if connectedPeripheral == nil {
             return
         }
@@ -152,7 +152,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      
      - parameter characteristic: The characteristic which user should 
      */
-    func readValueForCharacteristic(characteristic: CBCharacteristic) {
+    public func readValueForCharacteristic(characteristic: CBCharacteristic) {
         if connectedPeripheral == nil {
             return
         }
@@ -165,7 +165,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      - parameter enable:         If you want to start listening, the value is true, others is false
      - parameter characteristic: The characteristic which provides notifications
      */
-    func setNotification(enable: Bool, forCharacteristic characteristic: CBCharacteristic){
+    public func setNotification(enable: Bool, forCharacteristic characteristic: CBCharacteristic){
         if connectedPeripheral == nil {
             return
         }
@@ -179,7 +179,7 @@ public class BluetoothManager : NSObject, CBCentralManagerDelegate, CBPeripheral
      - parameter characteristic: The characteristic information
      - parameter type:           The write of the operation
      */
-    func writeValue(data: Data, forCharacteristic characteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
+    public func writeValue(data: Data, forCharacteristic characteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
         if connectedPeripheral == nil {
             return
         }
